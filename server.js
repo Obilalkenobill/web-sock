@@ -41,4 +41,10 @@ if(client.room.indexOf(JSON.parse(message).room)>-1){
 client.send(message)
 }
 })
+
+setInterval(() => {
+    wss.clients.forEach((client) => {
+      client.send(new Date().toTimeString());
+    });
+  }, 1000);
 }
