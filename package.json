@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && forever server.js",
+    "start": "npm install && IS_PROD=1 forever server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
