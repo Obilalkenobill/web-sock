@@ -16,6 +16,7 @@ const wss=new WebSocket.Server({server:bserver});
 wss.on('connection',ws=>{
 ws.room=[];
 ws.send(JSON.stringify({msg:"user joined"}));
+this.setInterval();
 console.log('connected');
 ws.on('message', message=>{
     //try{
