@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && IS_PROD=1 forever server.js",
+    "start": "npm install && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,13 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "forever-monitor": "^3.0.3",
     "http": "^0.0.1-security",
     "ws": "^8.7.0"
   },
   "engines": {
     "node": "16.13.0",
-    "npm": "8.1.0",
-    "forever":"4.0.3"
+    "npm": "8.1.0"
   }
 }
