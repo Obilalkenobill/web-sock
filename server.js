@@ -16,7 +16,7 @@ const wss=new WebSocket.Server({server:bserver});
 wss.on('connection',ws=>{
 ws.room=[];
 ws.send(JSON.stringify({msg:"user joined"}));
-this.setInterval();
+this.doTimer();
 console.log('connected');
 ws.on('message', message=>{
     //try{
@@ -42,10 +42,16 @@ if(client.room.indexOf(JSON.parse(message).room)>-1){
 client.send(message)
 }
 })
+}
 
-setInterval(() => {
+async function doTimer () {
+  setInterval(() => {
     wss.clients.forEach((client) => {
       client.send(new Date().toTimeString());
     });
   }, 1000);
 }
+
+
+
+
