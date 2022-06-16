@@ -27,7 +27,9 @@ if(messag.room){console.log('room: ',messag.room);broadcast(message);}
 if(messag.msg){console.log('message: ',messag.msg)}
 })
 
-ws.on('error',e=>console.log(e))
+ws.on('error',e=>console.log(e) ,()=>bserver.listen(webPort, function(){
+ console.log('Web server start. http://localhost:' + webPort );
+}))
 ws.on('close',(e)=>console.log('websocket closed'+e))
 
 })
