@@ -8,7 +8,7 @@ app.use(express.static('public'));
 const bserver=http.createServer(app);
 const webPort = process.env.PORT || 3001;
 
- bserver.listen(webPort,'0.0.0.0', function(){
+ bserver.listen(webPort, function(){
  console.log('Web server start. http://localhost:' + webPort );
 });
 const wss=new WebSocket.Server({server:bserver});
