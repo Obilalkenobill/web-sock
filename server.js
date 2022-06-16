@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static('public'));
 const bserver=http.createServer(app);
-const webPort = 8080;
+const webPort = process.env.PORT || 3001;
 
  bserver.listen(webPort, function(){
  console.log('Web server start. http://localhost:' + webPort );
